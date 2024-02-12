@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_nav_graph"
+    app:startDestination="@id/viewPagerFragment">
+
+    <fragment
+        android:id="@+id/splashScreen2"
+        android:name="com.example.e_comstarterdevsstream.ui.fragment.splashScreen.SecondSplashScreen"
+        android:label="SplashScreen2"
+        tools:layout="@layout/second_splash_screen"/>
+    <fragment
+        android:id="@+id/splashScreen3"
+        android:name="com.example.e_comstarterdevsstream.ui.fragment.splashScreen.ThirdSplashScreen"
+        android:label="SplashScreen3"
+        tools:layout="@layout/third_splash_screen"/>
+    <fragment
+        android:id="@+id/afterSplashScreen"
+        android:name="com.example.e_comstarterdevsstream.ui.fragment.AfterSplashScreen"
+        android:label="AfterSplashScreen"
+        tools:layout="@layout/fragment_introduction"/>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.e_comstarterdevsstream.ui.fragment.viewPager.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_splashScreen"
+            app:destination="@id/splashScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.e_comstarterdevsstream.ui.fragment.splashScreen.FirstSplashScreen"
+        android:label="SplashScreen"
+        tools:layout="@layout/first_splash_screen">
+        <action
+            android:id="@+id/action_splashScreen_to_afterSplashScreen"
+            app:destination="@id/afterSplashScreen" />
+    </fragment>
+</navigation>
