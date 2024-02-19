@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/register_login_background"
+    tools:context=".ui.activity.checkout.activity.CheckoutThankYouActivity">
+
+    <!--toolbar section -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/checkOutToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="16dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--splash image text-->
+
+    <ImageView
+        android:id="@+id/imageDone"
+        android:layout_width="164dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="112dp"
+        android:src="@drawable/ic_done"
+        app:layout_constraintEnd_toEndOf="@+id/checkOutToolbar"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/checkOutToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/checkOutToolbar" />
+
+    <!--thank you text-->
+    <TextView
+        android:id="@+id/thankYouText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_bold_700"
+        android:text="Thank You!"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@id/imageDone"
+        app:layout_constraintTop_toBottomOf="@+id/imageDone" />
+
+    <!--others text-->
+    <LinearLayout
+        android:id="@+id/OrderText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/checkOutToolbar"
+        app:layout_constraintStart_toStartOf="@id/checkOutToolbar"
+        app:layout_constraintTop_toBottomOf="@id/thankYouText">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:text="Your Order "
+                android:textColor="@color/textBlackSubTitle"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/orderId"
+                app:layout_constraintEnd_toStartOf="@+id/orderId"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/orderId" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:text=" is Completed."
+                android:textColor="@color/textBlackSubTitle"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/orderId"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/orderId"
+                app:layout_constraintTop_toTopOf="@+id/orderId" />
+
+            <TextView
+                android:id="@+id/orderId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold_700"
+                android:text="#345678"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView8"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView7"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:gravity="end"
+                android:text="Please Check the Delivery Status at"
+                android:textColor="@color/textBlackSubTitle"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textOrder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="45dp"
+                android:fontFamily="@font/poppins_bold_700"
+                android:text=" Order"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textTracking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_bold_700"
+                android:text="Tracking "
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView14"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:text="Pages."
+                android:textColor="@color/textBlackSubTitle"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textTracking"
+                app:layout_constraintTop_toTopOf="@+id/textTracking" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <!--Continue Shopping button-->
+    <TextView
+        android:id="@+id/btnContinueShopping"
+        android:layout_width="354dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/btn_bg_shape"
+        android:fontFamily="@font/poppins_bold_700"
+        android:gravity="center"
+        android:text="Continue Shopping"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/checkOutToolbar"
+        app:layout_constraintStart_toStartOf="@id/checkOutToolbar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

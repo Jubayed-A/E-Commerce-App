@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/register_login_background"
+    tools:context=".ui.fragment.shopping.home.HomeFragment">
+
+    <!--toolbar section -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/HomeFragmentToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/register_login_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold_700"
+                android:gravity="start"
+                android:text="Discover"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageFilter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageFilter"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/ic_cart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--  others design  -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/mainCategoryProgressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/textBlackSubTitle"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--    for image slider  product code here -->
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="3000"
+                app:iss_period="2000"
+                app:iss_placeholder="@drawable/default_loading"
+                app:iss_unselected_dot="@drawable/default_unselected_dot"
+                app:iss_selected_dot="@drawable/default_selected_dot"
+                app:iss_error_image="@drawable/default_error"
+                app:iss_corner_radius="20"
+                app:iss_text_align="CENTER"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--    rv categories section here here -->
+            <TextView
+                android:id="@+id/tvCategoriesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:text="Categories"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/rvBestDealProduct"
+                app:layout_constraintTop_toBottomOf="@id/image_slider" />
+
+            <TextView
+                android:id="@+id/tvCategoriesViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_bold_700"
+                android:text="VIEW ALL"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/rvBestDealProduct"
+                app:layout_constraintTop_toBottomOf="@+id/image_slider" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBestDealProduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/category_home_each_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@+id/image_slider"
+                app:layout_constraintStart_toStartOf="@+id/image_slider"
+                app:layout_constraintTop_toBottomOf="@id/tvCategoriesText" />
+
+            <TextView
+                android:id="@+id/tvBestProductText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:text="Trendings"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/rvBestDealProduct"
+                app:layout_constraintTop_toBottomOf="@id/rvBestDealProduct" />
+
+            <!--    rv best product code here -->
+            <TextView
+                android:id="@+id/tvTrendingViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/poppins_bold_700"
+                android:text="VIEW ALL"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/rvBestProduct"
+                app:layout_constraintTop_toBottomOf="@+id/rvBestDealProduct" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBestProduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:overScrollMode="never"
+                tools:listitem="@layout/tending_each_item"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/rvBestDealProduct"
+                app:layout_constraintTop_toBottomOf="@id/tvBestProductText" />
+
+            <!-- this progress bar is for paging -->
+            <ProgressBar
+                android:id="@+id/bestProductProgressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:indeterminateTint="@color/textBlackSubTitle"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

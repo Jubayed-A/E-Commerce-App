@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/register_login_background"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.profile.ProfilesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--toolbar section -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profilesFragmentToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_arrow_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold_700"
+                    android:gravity="center"
+
+
+                    android:text="Profiles"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- first cart section -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/firstCartSection"
+            android:layout_width="0dp"
+            android:layout_height="138dp"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="@id/profilesFragmentToolbar"
+            app:layout_constraintStart_toStartOf="@id/profilesFragmentToolbar"
+            app:layout_constraintTop_toBottomOf="@id/profilesFragmentToolbar">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--            profile image section -->
+
+                <!--verification section-->
+
+                <ImageView
+                    android:id="@+id/imageProfile"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/product_item_shape"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.148" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/poppins_regular_400"
+                    android:text="Verified"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkBox"
+                    app:layout_constraintStart_toEndOf="@+id/checkBox"
+                    app:layout_constraintTop_toTopOf="@+id/checkBox" />
+
+
+                <!--            name section -->
+                <ImageView
+                    android:id="@+id/checkBox"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@drawable/tearms"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageProfile"
+                    app:layout_constraintTop_toBottomOf="@+id/imageProfile" />
+
+                <TextView
+                    android:id="@+id/tvPersonName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="William B.Brickner"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@+id/editProfile"
+                    app:layout_constraintStart_toEndOf="@id/imageProfile"
+                    app:layout_constraintTop_toTopOf="@id/imageProfile" />
+
+                <!--            email section -->
+                <TextView
+                    android:id="@+id/tvPersonMail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/poppins_regular_400"
+                    android:text="william.Brickner56@gmail.com"
+                    android:textColor="@color/textBlackSubTitle"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvPersonName"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tvPersonName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPersonName" />
+
+                <!--            edit section -->
+
+                <LinearLayout
+                    android:id="@+id/editProfile"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_item_add_remove"
+                    android:backgroundTint="@color/black"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPersonMail">
+
+                    <ImageView
+                        android:id="@+id/imagePlus"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginEnd="7dp"
+                        android:src="@drawable/ic_edit"
+                        tools:layout_editor_absoluteX="331dp"
+                        tools:layout_editor_absoluteY="45dp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold_700"
+                        android:gravity="end"
+                        android:text="Edit"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Others section -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/firstCartSection"
+            app:layout_constraintStart_toStartOf="@id/firstCartSection"
+            app:layout_constraintTop_toBottomOf="@+id/firstCartSection">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                >
+
+                <ImageView
+                    android:id="@+id/arrowForwordIcon"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_arrow_forword"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="start"
+                    android:text="My Orders"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@+id/arrowForwordIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottomLine"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/btn_bg_shape"
+                    android:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView"
+                    app:layout_constraintTop_toBottomOf="@id/textView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/arrowForwordIcon2"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_arrow_forword"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="start"
+                    android:text="My Favourites"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@+id/arrowForwordIcon2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottomLine2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/btn_bg_shape"
+                    android:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView2"
+                    app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/arrowForwordIcon3"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_arrow_forword"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="start"
+                    android:text="Shipping Address"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@+id/arrowForwordIcon3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottomLine3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/btn_bg_shape"
+                    android:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView3"
+                    app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/arrowForwordIcon4"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_arrow_forword"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="start"
+                    android:text="My Saved Cards"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@+id/arrowForwordIcon4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottomLine4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/btn_bg_shape"
+                    android:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView4"
+                    app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/arrowForwordIcon5"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_arrow_forword"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="start"
+                    android:text="Gift Cards &amp; Vouchers"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@+id/arrowForwordIcon5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottomLine5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/btn_bg_shape"
+                    android:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView5"
+                    app:layout_constraintTop_toBottomOf="@id/textView5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/arrowForwordIcon6"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_arrow_forword"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="start"
+                    android:text="Logout"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@+id/arrowForwordIcon6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bottomLine6"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/btn_bg_shape"
+                    android:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView6"
+                    app:layout_constraintTop_toBottomOf="@id/textView6" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+
+
+    <ImageView
+        android:id="@+id/orderItemImage"
+        android:layout_width="110dp"
+        android:layout_height="105dp"
+        android:background="@drawable/product_item_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/orderItemImage"
+        app:layout_constraintTop_toTopOf="@id/orderItemImage">
+
+        <TextView
+            android:id="@+id/orderItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text="Benington Dining Table Black"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/orderItemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular_400"
+            android:text="Use filler text that has be..%5%%"
+            android:textColor="@color/textBlackSubTitle"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/categoriesItemImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/orderItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:text="$34.00"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/linerLayout"
+        app:layout_constraintTop_toBottomOf="@id/linerLayout"
+        android:layout_marginTop="15dp"/>
+
+
+    <ImageView
+        android:id="@+id/imageOrderEdit"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/ic_replay"
+        app:layout_constraintBottom_toBottomOf="@id/imageOrderReplay"
+        app:layout_constraintStart_toEndOf="@id/imageOrderReplay"
+        app:layout_constraintTop_toTopOf="@id/imageOrderReplay"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageOrderReplay"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/ic_order_edit"
+        app:layout_constraintBottom_toBottomOf="@id/orderItemPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/orderItemPrice"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/lineBreak"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_bg_shape"
+        android:backgroundTint="@color/g_line"
+        app:layout_constraintTop_toBottomOf="@id/orderItemImage"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

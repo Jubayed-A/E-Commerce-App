@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/register_login_background"
+    tools:context=".ui.activity.FilterActivity">
+
+    <!--toolbar section -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/HomeFragmentToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/register_login_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold_700"
+                android:gravity="start"
+                android:text="Filter"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageFilter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageFilter"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/ic_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/HomeFragmentToolbar"
+        app:layout_constraintStart_toStartOf="@+id/HomeFragmentToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/HomeFragmentToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvSortByText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:text="Sort By"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDropDownText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_regular_400"
+                android:text="Recommended"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="@id/tvSortByText"
+                app:layout_constraintTop_toBottomOf="@id/tvSortByText" />
+
+            <ImageButton
+                android:id="@+id/dropdown_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_drop_down"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDropDownText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvDropDownText" />
+
+            <!-- material section -->
+            <LinearLayout
+                android:id="@+id/materialSection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/dropdown_icon"
+                app:layout_constraintStart_toStartOf="@id/tvDropDownText"
+                app:layout_constraintTop_toBottomOf="@id/tvDropDownText">
+
+                <TextView
+                    android:id="@+id/tvProductMaterials"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="Material"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMaterials"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/filter_each_item"
+                    tools:itemCount="5"
+                    app:spanCount="3"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+            </LinearLayout>
+
+            <!-- categories section -->
+            <LinearLayout
+                android:id="@+id/categoriesSection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/materialSection"
+                app:layout_constraintStart_toStartOf="@id/materialSection"
+                app:layout_constraintTop_toBottomOf="@id/materialSection">
+
+                <TextView
+                    android:id="@+id/tvProductCategories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="Categories"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/filter_each_item"
+                    tools:itemCount="6"
+                    app:spanCount="3"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"/>
+
+            </LinearLayout>
+
+            <!-- colors section -->
+            <LinearLayout
+                android:id="@+id/colorSection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/categoriesSection"
+                app:layout_constraintStart_toStartOf="@id/categoriesSection"
+                app:layout_constraintTop_toBottomOf="@id/categoriesSection">
+
+                <TextView
+                    android:id="@+id/tvProductColors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="Colors"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvColors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- price range seekbar section -->
+
+            <LinearLayout
+                android:id="@+id/seekbarSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/colorSection"
+                app:layout_constraintStart_toStartOf="@id/colorSection"
+                app:layout_constraintTop_toBottomOf="@id/colorSection">
+
+                <TextView
+                    android:id="@+id/tvProductPriceRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="Price"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+
+                <com.mohammedalaa.seekbar.DoubleValueSeekBarView
+                    android:id="@+id/double_range_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:r2CurrentMaxValue="200"
+                    app:r2CurrentMinValue="10"
+                    app:r2barHeight="15dp"
+                    app:r2baseColor="#E0E0E0"
+                    app:r2circleFillColor="@color/black"
+                    app:r2circleRadius="10dp"
+                    app:r2circleTextColor="@color/white"
+                    app:r2circleTextSize="@dimen/value_bar_circleTextSize"
+                    app:r2fillColor="@color/black"
+                    app:r2maxValue="300"
+                    app:r2maxValueStep="10"
+                    app:r2minValue="15"
+                    app:r2minValueStep="5" />
+
+            </LinearLayout>
+
+            <!-- apply button section -->
+            <TextView
+                android:id="@+id/btnApply"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/btn_bg_shape"
+                android:gravity="center"
+                android:text="Apply"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seekbarSection" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/btn_bg_shape"
+    android:backgroundTint="@color/white">
+
+    <TextView
+        android:id="@+id/tvCardOwnerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:text="Claudia T. Reyes"
+        android:textColor="@color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="13sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCardOwnerEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular_400"
+        android:text="claudia.reyes21@gmail.com"
+        android:textColor="@color/textBlackSubTitle"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/tvCardOwnerName"
+        app:layout_constraintStart_toStartOf="@id/tvCardOwnerName"/>
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/radioButton"
+        app:layout_constraintStart_toStartOf="@+id/tvCardOwnerName"
+        app:layout_constraintTop_toBottomOf="@id/radioButton">
+
+
+        <TextView
+            android:id="@+id/cardNoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular_400"
+            android:text="Card No"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cardExpDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:text="Exp. Date"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cardNoText"
+            app:layout_constraintTop_toBottomOf="@id/cardNoText" />
+
+        <TextView
+            android:id="@+id/firstColon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/cardNoText"
+            app:layout_constraintStart_toEndOf="@id/cardNoText"
+            app:layout_constraintTop_toTopOf="@id/cardNoText" />
+
+        <TextView
+            android:id="@+id/secondColon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardExpDateText"
+            app:layout_constraintEnd_toEndOf="@id/firstColon"
+            app:layout_constraintStart_toStartOf="@id/firstColon"
+            app:layout_constraintTop_toBottomOf="@id/firstColon" />
+
+        <TextView
+            android:id="@+id/cardNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:gravity="end
+"
+            android:text="2342 22**  ****  **00"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/firstColon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/firstColon"
+            app:layout_constraintTop_toTopOf="@id/firstColon" />
+
+        <TextView
+            android:id="@+id/cardExpDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text="06/23"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/secondColon"
+            app:layout_constraintStart_toEndOf="@id/secondColon"
+            app:layout_constraintTop_toTopOf="@id/secondColon" />
+
+
+        <TextView
+            android:id="@+id/cvv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:text="CVV"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/cardExpDate"
+            app:layout_constraintStart_toEndOf="@id/cardExpDate"
+            app:layout_constraintTop_toTopOf="@id/cardExpDate" />
+
+        <TextView
+            android:id="@+id/thirdColon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/cvv"
+            app:layout_constraintStart_toEndOf="@id/cvv"
+            app:layout_constraintTop_toTopOf="@id/cvv" />
+
+        <TextView
+            android:id="@+id/cvvNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:gravity="end"
+            android:text="***"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/thirdColon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/thirdColon"
+            app:layout_constraintTop_toTopOf="@id/thirdColon" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

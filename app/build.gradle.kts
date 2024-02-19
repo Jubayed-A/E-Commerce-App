@@ -33,6 +33,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        //noinspection DataBindingWithoutKapt
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -46,4 +51,24 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+
+    // indicator
+    implementation("me.relex:circleindicator:2.1.6")
+
+    // for meow bottom navigation
+    implementation("com.github.qamarelsafadi:CurvedBottomNavigation:0.1.3")
+
+
+
+    // for range seekbar
+    implementation ("com.github.MohammedAlaaMorsi:RangeSeekBar:1.0.6")
+
+    // Circular image
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    // image slider
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+
+
 }

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.registerAndLogin.LogInFragment">
+    android:background="@color/register_login_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.logInAndRegister.LogInFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,15 +17,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="73dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_bold_700"
+                android:gravity="end|center_vertical"
                 android:text="SKIP"
                 android:textColor="@color/black"
                 android:textSize="13sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,8 +35,8 @@
                 android:id="@+id/createAnAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="154dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="110dp"
                 android:text="Let’s Sign You In."
                 android:textColor="@color/black"
                 android:textSize="28sp"
@@ -48,6 +52,7 @@
                 android:text="To Continue, first Verify that it’s You."
                 android:textColor="@color/black"
                 android:textSize="17sp"
+                android:fontFamily="@font/poppins_regular_400"
                 app:layout_constraintStart_toStartOf="@+id/createAnAccount"
                 app:layout_constraintTop_toBottomOf="@+id/createAnAccount" />
 
@@ -58,7 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:text="Email Address*"
-                android:textColor="@color/black"
+                android:textColor="@color/textBlackSubTitle"
+                android:fontFamily="@font/poppins_semi_bold_600"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="@+id/etEmail"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -67,20 +73,18 @@
                 android:id="@+id/etEmail"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
-                android:layout_marginStart="17.5dp"
                 android:layout_marginTop="7dp"
-                android:layout_marginEnd="17.5dp"
-                android:background="@drawable/edit_text_custom"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/input_shape"
                 android:elevation="6dp"
                 android:ems="10"
-                android:hint="Your E-mail"
                 android:inputType="textEmailAddress"
                 android:paddingStart="18dp"
                 android:shadowDy="4"
-                android:textColorHint="@color/hint_color"
+                android:textColorHint="@color/textBlackSubTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/createAnAccount"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <!--password section-->
@@ -88,9 +92,10 @@
                 android:id="@+id/textPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_semi_bold_600"
                 android:text="Password*"
-                android:textColor="@color/black"
+                android:textColor="@color/textBlackSubTitle"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="@+id/etPassword"
                 app:layout_constraintTop_toBottomOf="@+id/etEmail" />
@@ -100,14 +105,13 @@
                 android:layout_width="0dp"
                 android:layout_height="56dp"
                 android:layout_marginTop="7dp"
-                android:background="@drawable/edit_text_custom"
+                android:background="@drawable/input_shape"
                 android:elevation="6dp"
                 android:ems="10"
-                android:hint="Password"
                 android:inputType="textPassword"
                 android:paddingStart="18dp"
                 android:shadowDy="4"
-                android:textColorHint="@color/hint_color"
+                android:textColorHint="@color/textBlackSubTitle"
                 app:layout_constraintEnd_toEndOf="@+id/etEmail"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/etEmail"
@@ -120,46 +124,68 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="12dp"
-                android:text="Forgot Password"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:text="Forgot Password?"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="@+id/etPassword"
                 app:layout_constraintTop_toBottomOf="@+id/etPassword" />
-
 
             <!--login button-->
             <TextView
                 android:id="@+id/btnLogIn"
                 android:layout_width="354dp"
                 android:layout_height="54dp"
-                android:layout_marginTop="44dp"
-                android:background="@drawable/bg_shape"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/btn_bg_shape"
                 android:gravity="center"
                 android:text="Login"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/etPassword"
+                app:layout_constraintStart_toStartOf="@+id/etPassword"
                 app:layout_constraintTop_toBottomOf="@+id/textForgotPassword" />
 
-
             <!--don't have an account -->
-            <TextView
-                android:id="@+id/textDontHaveAccount"
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
-                android:text="Don’t have an Account? Register"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="Don’t have an Account? "
+                    android:textColor="@color/textBlackSubTitle"
+                    android:textSize="13sp"
+                    />
+
+                <TextView
+                    android:id="@+id/textDontHaveAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text=" REGISTER"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    />
+
+
+
+            </LinearLayout>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
-</FrameLayout>
+
+</androidx.core.widget.NestedScrollView>
