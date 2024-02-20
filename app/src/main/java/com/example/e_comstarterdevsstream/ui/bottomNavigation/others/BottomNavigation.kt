@@ -67,5 +67,4 @@ class BottomNavigation : AppCompatActivity() {
             .commit()
     }
 
-
 }
