@@ -1,4 +1,4 @@
-package com.devsstore.devsstore.ui.activity.checkout.stepper
+package com.example.e_comstarterdevsstream.ui.activity.checkout.stepper
 
 import android.util.Log
 import androidx.fragment.app.Fragment
