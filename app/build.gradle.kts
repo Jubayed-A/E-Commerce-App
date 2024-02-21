@@ -70,5 +70,8 @@ dependencies {
     // image slider
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
 
+    // for stepper
+    implementation("com.github.badoualy:stepper-indicator:1.0.7")
+
 
 }
