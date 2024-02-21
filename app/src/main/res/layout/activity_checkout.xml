@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.checkout.stepper.CheckoutActivity">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.badoualy.stepperindicator.StepperIndicator
+        android:id="@+id/stepperIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:stpi_circleColor="@color/black"
+        app:stpi_circleRadius="8dp"
+        app:stpi_circleStrokeWidth="1dp"
+        app:stpi_indicatorColor="@color/black"
+        app:stpi_indicatorRadius="5dp"
+        app:stpi_lineColor="@color/g_line"
+        app:stpi_lineDoneColor="@color/g_line"
+        app:stpi_lineMargin="0dp"
+        app:stpi_stepCount="3" />
+
+    <TextView
+        android:id="@+id/stepperPersonInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-20dp"
+        android:fontFamily="@font/poppins_regular_400"
+        android:text="Personal Info"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/stepperIndicator"
+        app:layout_constraintTop_toBottomOf="@+id/stepperIndicator" />
+
+    <TextView
+        android:id="@+id/stepperPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:fontFamily="@font/poppins_regular_400"
+        android:text="Payment"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/stepperPersonInfo"
+        app:layout_constraintTop_toTopOf="@+id/stepperPersonInfo"
+        app:layout_constraintBottom_toBottomOf="@id/stepperPersonInfo"/>
+
+    <TextView
+        android:id="@+id/stepperConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-60dp"
+        android:fontFamily="@font/poppins_regular_400"
+        android:text="Confirmation"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/stepperPayment"
+        app:layout_constraintStart_toEndOf="@+id/stepperIndicator"
+        app:layout_constraintTop_toTopOf="@+id/stepperPayment" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
