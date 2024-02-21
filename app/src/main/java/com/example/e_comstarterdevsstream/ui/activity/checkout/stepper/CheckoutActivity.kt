@@ -1,13 +1,15 @@
-package com.devsstore.devsstore.ui.activity.checkout.stepper
+package com.example.e_comstarterdevsstream.ui.activity.checkout.stepper
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.devsstore.devsstore.databinding.ActivityCheckoutBinding
 import com.devsstore.devsstore.ui.activity.checkout.fragments.CheckoutConfirmationFragment
 import com.devsstore.devsstore.ui.activity.checkout.fragments.CheckoutInfoFragment
 import com.devsstore.devsstore.ui.activity.checkout.fragments.CheckoutPaymentFragment
+import com.devsstore.devsstore.ui.activity.checkout.stepper.ButtonClickListener
+import com.devsstore.devsstore.ui.activity.checkout.stepper.ViewPagerAdapter
+import com.example.e_comstarterdevsstream.databinding.ActivityCheckoutBinding
 
-class CheckoutActivity : AppCompatActivity() , ButtonClickListener {
+class CheckoutActivity : AppCompatActivity(), ButtonClickListener {
 
     private lateinit var binding: ActivityCheckoutBinding
 
@@ -40,7 +42,6 @@ class CheckoutActivity : AppCompatActivity() , ButtonClickListener {
         checkoutPaymentFragment?.setButtonClickListener(this)
 
 
-
     }
 
 
@@ -53,6 +54,7 @@ class CheckoutActivity : AppCompatActivity() , ButtonClickListener {
                 // Switch to the next fragment (CheckoutPaymentFragment)
                 binding.viewPager.setCurrentItem(currentItem + 1, true)
             }
+
             1 -> {
                 // User clicked the button in CheckoutPaymentFragment
                 // Switch to the next fragment (CheckoutConfirmationFragment)
@@ -66,59 +68,41 @@ class CheckoutActivity : AppCompatActivity() , ButtonClickListener {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // like fragment
 
-  /*  override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = ActivityCheckoutBinding.inflate(inflater)
-        return binding.root
-    }
+    /*  override fun onCreateView(
+          inflater: LayoutInflater,
+          container: ViewGroup?,
+          savedInstanceState: Bundle?
+      ): View {
+          binding = ActivityCheckoutBinding.inflate(inflater)
+          return binding.root
+      }
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+          super.onViewCreated(view, savedInstanceState)
 
-        val fragments = listOf(
-            CheckoutInfoFragment.newInstance(),
-            CheckoutPaymentFragment.newInstance(),
-            CheckoutConfirmationFragment.newInstance(),
-            // Add more fragments as needed
-        )
-
-
-        // Set up ViewPager adapter
-        val adapter = ViewPagerAdapter(childFragmentManager,fragments)
-        binding.viewPager.adapter = adapter
+          val fragments = listOf(
+              CheckoutInfoFragment.newInstance(),
+              CheckoutPaymentFragment.newInstance(),
+              CheckoutConfirmationFragment.newInstance(),
+              // Add more fragments as needed
+          )
 
 
-        // Connect StepperIndicator with ViewPager
-        binding.stepperIndicator.setViewPager(binding.viewPager)
+          // Set up ViewPager adapter
+          val adapter = ViewPagerAdapter(childFragmentManager,fragments)
+          binding.viewPager.adapter = adapter
 
 
-
-    }
-*/
+          // Connect StepperIndicator with ViewPager
+          binding.stepperIndicator.setViewPager(binding.viewPager)
 
 
 
-
+      }
+  */
 
 
 }
