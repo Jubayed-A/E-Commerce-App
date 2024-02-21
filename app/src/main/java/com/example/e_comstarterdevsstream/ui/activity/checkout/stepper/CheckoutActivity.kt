@@ -2,12 +2,10 @@ package com.example.e_comstarterdevsstream.ui.activity.checkout.stepper
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.devsstore.devsstore.ui.activity.checkout.fragments.CheckoutConfirmationFragment
-import com.devsstore.devsstore.ui.activity.checkout.fragments.CheckoutInfoFragment
-import com.devsstore.devsstore.ui.activity.checkout.fragments.CheckoutPaymentFragment
-import com.devsstore.devsstore.ui.activity.checkout.stepper.ButtonClickListener
-import com.devsstore.devsstore.ui.activity.checkout.stepper.ViewPagerAdapter
 import com.example.e_comstarterdevsstream.databinding.ActivityCheckoutBinding
+import com.example.e_comstarterdevsstream.ui.activity.checkout.fragments.CheckoutConfirmationFragment
+import com.example.e_comstarterdevsstream.ui.activity.checkout.fragments.CheckoutInfoFragment
+import com.example.e_comstarterdevsstream.ui.activity.checkout.fragments.CheckoutPaymentFragment
 
 class CheckoutActivity : AppCompatActivity(), ButtonClickListener {
 

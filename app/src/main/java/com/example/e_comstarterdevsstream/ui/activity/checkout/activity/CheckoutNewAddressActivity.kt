@@ -1,12 +1,12 @@
-package com.example.e_comstarterdevsstream.ui.activity.checkout
+package com.example.e_comstarterdevsstream.ui.activity.checkout.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.e_comstarterdevsstream.R
 
-class CheckoutActivity : AppCompatActivity() {
+class CheckoutNewAddressActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_checkout)
+        setContentView(R.layout.activity_checkout_new_address)
     }
 }
