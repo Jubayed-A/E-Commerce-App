@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_login_background"
-    tools:context=".ui.activity.checkout.fragments.CheckoutPaymentFragment">
-
+    tools:context=".ui.activity.checkout.fragments.CheckoutInfoFragment">
 
     <!--toolbar section -->
     <androidx.appcompat.widget.Toolbar
@@ -23,7 +22,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -47,15 +45,14 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </androidx.appcompat.widget.Toolbar>
 
-    <!--  checkout payment fragment  -->
+
+    <!--  checkout info fragment  -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/checkoutPaymentSection"
+        android:id="@+id/checkoutInfoSection"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="70dp"
@@ -65,86 +62,41 @@
         app:layout_constraintStart_toStartOf="@id/checkOutToolbar"
         app:layout_constraintTop_toBottomOf="@id/checkOutToolbar">
 
+
         <TextView
-            android:id="@+id/tvPaymentMethodText"
+            android:id="@+id/tvAddressText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semi_bold_600"
-            android:text="Payment Methods"
+            android:text="Address"
             android:textColor="@color/black"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/paymentMethods"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tvPaymentMethodText"
-            app:layout_constraintTop_toBottomOf="@id/tvPaymentMethodText">
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_cash" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="62dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/ic_card" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_net" />
-
-
-        </LinearLayout>
-
         <TextView
-            android:id="@+id/tvSaveCardText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/poppins_semi_bold_600"
-            android:text="Saved Cards"
-            android:textColor="@color/black"
-            android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/paymentMethods" />
-
-        <TextView
-            android:id="@+id/tvNewCards"
+            android:id="@+id/tvNewAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular_400"
-            android:text="New Card"
+            android:text="NEW ADDRESS"
             android:textColor="@color/black"
-            android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="@id/tvSaveCardText"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvAddressText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvSaveCardText" />
+            app:layout_constraintTop_toTopOf="@id/tvAddressText" />
 
-        <!--recyclerview for cardDetails-->
+        <!--    recyclerview for address-->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvCardsDetails"
+            android:id="@+id/rvAddress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnContinue"
-            app:layout_constraintEnd_toEndOf="@+id/tvNewCards"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/tvSaveCardText"
-            app:layout_constraintTop_toBottomOf="@id/tvSaveCardText"
-            app:layout_constraintVertical_bias="0.0"
-            tools:itemCount="2"
-            tools:listitem="@layout/each_card" />
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvNewAddress"
+            app:layout_constraintStart_toStartOf="@id/tvAddressText"
+            app:layout_constraintTop_toBottomOf="@id/tvAddressText"
+            tools:itemCount="3"
+            tools:listitem="@layout/checkout_each_item" />
 
         <!--continue button-->
         <TextView
@@ -160,18 +112,22 @@
             android:textColor="@color/white"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/rvCardsDetails"
-            app:layout_constraintStart_toStartOf="@+id/rvCardsDetails" />
+            app:layout_constraintEnd_toEndOf="@+id/rvAddress"
+            app:layout_constraintStart_toStartOf="@+id/rvAddress"
+            app:layout_constraintTop_toBottomOf="@+id/rvAddress"
+            app:layout_constraintVertical_bias="1.0" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--  checkout payment new card add fragment  -->
+
+    <!--  checkout new address fragment  -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/checkoutPaymentNewCardSection"
+        android:id="@+id/checkoutNewAddress"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="70dp"
         android:visibility="gone"
+        android:layout_marginTop="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/checkOutToolbar"
         app:layout_constraintStart_toStartOf="@id/checkOutToolbar"
@@ -179,25 +135,24 @@
 
 
         <TextView
-            android:id="@+id/tvPaymentText"
+            android:id="@+id/tvDeliverToText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semi_bold_600"
-            android:text="Payment"
+            android:text="Deliver To"
             android:textColor="@color/black"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/linearLayout5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPaymentText">
+            app:layout_constraintTop_toBottomOf="@id/tvDeliverToText">
 
 
             <LinearLayout
@@ -212,12 +167,12 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edCardNumber"
+                        android:id="@+id/edFullName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
                         android:gravity="center"
-                        android:text="Card Number*"
+                        android:text="Full Name*"
                         android:textColor="@color/black"
                         android:textSize="13sp" />
 
@@ -231,13 +186,13 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/edCardholderName"
+                android:id="@+id/edPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_semi_bold_600"
                 android:gravity="center"
-                android:text="Card Holder Name*"
+                android:text="Phone Number*"
                 android:textColor="@color/black"
                 android:textSize="13sp" />
 
@@ -259,12 +214,12 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edExpDate"
+                        android:id="@+id/edCity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
                         android:gravity="center"
-                        android:text="Exp.Date*"
+                        android:text="City/ District*"
                         android:textColor="@color/black"
                         android:textSize="13sp" />
 
@@ -282,12 +237,12 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edCVV"
+                        android:id="@+id/edZip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
                         android:gravity="center"
-                        android:text="CCV*"
+                        android:text="ZIP*"
                         android:textColor="@color/black"
                         android:textSize="13sp" />
 
@@ -299,30 +254,74 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/edAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="center"
+                    android:text="Address*"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+
+                <RadioButton
+                    android:id="@+id/radioHouse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="House / Apartment"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/radioCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="Agency / Company"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+
+            </RadioGroup>
+
+            <!--continue button-->
+            <TextView
+                android:id="@+id/btnSave"
+                android:layout_width="354dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_bg_shape"
+                android:fontFamily="@font/poppins_bold_700"
+                android:gravity="center"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
 
         </LinearLayout>
 
-        <!--continue button-->
-        <TextView
-            android:id="@+id/btnSave"
-            android:layout_width="354dp"
-            android:layout_height="54dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="60dp"
-            android:background="@drawable/btn_bg_shape"
-            android:fontFamily="@font/poppins_bold_700"
-            android:gravity="center"
-            android:text="Save"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
-            app:layout_constraintHorizontal_bias="0.47"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout5"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-            app:layout_constraintVertical_bias="1.0" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
