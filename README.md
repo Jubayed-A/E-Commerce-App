@@ -1,4 +1,4 @@
-# This is the project for learning or testing for DevsStream Limited
+# This is the e-commerce project for my portfolio for my personal e-commerce project 
 
 
 
