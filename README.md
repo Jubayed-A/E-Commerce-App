@@ -2,7 +2,7 @@
 
 
 
-- this is the project for DevsStrem Limited for e-commerce
+- this is the project for portfolio for e-commerce
 - we do this in this project for testing the project and implement in the real project
 
 
