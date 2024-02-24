@@ -1,17 +1,17 @@
 package com.example.e_comstarterdevsstream.ui.activity.checkout.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.e_comstarterdevsstream.databinding.FragmentCheckoutPaymentsBinding
-import com.example.e_comstarterdevsstream.ui.activity.checkout.stepper.ButtonClickListener
+import com.example.e_comstarterdevsstream.ui.activity.checkout.activity.CheckoutPaymentAddActivity
 
 class CheckoutPaymentFragment : Fragment() {
 
     private lateinit var binding: FragmentCheckoutPaymentsBinding
-    private var buttonClickListener: ButtonClickListener? = null
 
     companion object {
         // Factory method to create a new instance of the fragment for stepper
@@ -33,24 +33,13 @@ class CheckoutPaymentFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnContinue.setOnClickListener {
-            // Trigger the interface method when the button is clicked
-            buttonClickListener?.onButtonClicked()
+            startActivity(Intent(requireContext(), CheckoutConfirmationFragment::class.java))
         }
 
         binding.tvNewCards.setOnClickListener {
-            binding.checkoutPaymentSection.visibility = View.GONE
-            binding.checkoutPaymentNewCardSection.visibility = View.VISIBLE
-        }
-        binding.btnSave.setOnClickListener {
-            binding.checkoutPaymentSection.visibility = View.VISIBLE
-            binding.checkoutPaymentNewCardSection.visibility = View.GONE
+            startActivity(Intent(requireContext(), CheckoutPaymentAddActivity::class.java))
         }
 
-    }
-
-    // Setter method for the listener
-    fun setButtonClickListener(listener: ButtonClickListener) {
-        buttonClickListener = listener
     }
 
 }

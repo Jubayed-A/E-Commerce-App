@@ -27,6 +27,10 @@ class LogInFragment : Fragment() {
             findNavController().navigate(R.id.action_logInFragment_to_resetPasswordFragment)
         }
 
+        binding.textDontHaveAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_logInFragment_to_registerFragment)
+        }
+
     }
 
 }
