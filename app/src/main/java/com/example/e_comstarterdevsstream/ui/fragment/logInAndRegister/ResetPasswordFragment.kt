@@ -1,13 +1,13 @@
 package com.example.e_comstarterdevsstream.ui.fragment.logInAndRegister
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.e_comstarterdevsstream.R
 import com.example.e_comstarterdevsstream.databinding.FragmentResetPasswordBinding
+import com.example.e_comstarterdevsstream.ui.activity.MainActivity
 
 class ResetPasswordFragment : Fragment() {
 
@@ -26,7 +26,10 @@ class ResetPasswordFragment : Fragment() {
 
 
         binding.btnSend.setOnClickListener {
-            findNavController().navigate(R.id.action_resetPasswordFragment_to_homeFragment)
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+
+            // for finished the fragment
+            requireActivity().finish()
         }
 
     }

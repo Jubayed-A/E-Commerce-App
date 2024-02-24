@@ -13,6 +13,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
     }
 
 }

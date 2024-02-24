@@ -15,17 +15,15 @@ class ViewPagerFragment : Fragment() {
     private lateinit var binding: FragmentViewPagerBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentViewPagerBinding.inflate(inflater)
+        binding = FragmentViewPagerBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         setPager()
     }
@@ -34,7 +32,7 @@ class ViewPagerFragment : Fragment() {
         val pager = binding.viewPager
         val tabLayout = binding.tabLayout
         val pagerAdapter =
-            OnBodyViewPagerAdapter(childFragmentManager, lifecycle)
+            OnBodyViewPagerAdapter(childFragmentManager, viewLifecycleOwner.lifecycle)
         val compositePageTransformer = CompositePageTransformer()
         pager.clipToPadding = false
         pager.clipChildren = false
