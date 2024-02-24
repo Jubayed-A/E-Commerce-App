@@ -13,13 +13,57 @@
         android:theme="@style/Theme.DevsStore"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.checkout.stepper.CheckoutActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".ui.activity.orders.OrderHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.checkout.activity.CheckoutThankYouActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.checkout.fragments.CheckoutInfoFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.VouchersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MySavedCardsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ShippingAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MyFavouritesProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ReviewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.fragment.splashAndWelcome.ViewPagerFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.fragment.shopping.CartFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.FilterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ProductDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.profile.EditProfilesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.SplashScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.bottomNavigation.others.BottomNavigation"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
