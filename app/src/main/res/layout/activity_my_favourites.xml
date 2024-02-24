@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_login_background"
-    tools:context=".ui.activity.MyFavouritesActivity">
+    tools:context=".ui.activity.MyFavouritesProductsActivity">
 
     <!--toolbar section -->
     <androidx.appcompat.widget.Toolbar

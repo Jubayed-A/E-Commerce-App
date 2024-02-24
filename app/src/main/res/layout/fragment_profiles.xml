@@ -44,7 +44,6 @@
                     android:fontFamily="@font/poppins_bold_700"
                     android:gravity="center"
 
-
                     android:text="Profiles"
                     android:textColor="@color/black"
                     android:textSize="22sp"
@@ -209,6 +208,7 @@
                 android:background="?selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
+                android:id="@+id/myOrderSection"
                 >
 
                 <ImageView
@@ -254,7 +254,8 @@
                 android:layout_marginTop="25dp"
                 android:background="?selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:id="@+id/myFavouritesSection">
 
                 <ImageView
                     android:id="@+id/arrowForwordIcon2"
@@ -299,7 +300,8 @@
                 android:layout_marginTop="25dp"
                 android:background="?selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:id="@+id/shippingAddressSection">
 
                 <ImageView
                     android:id="@+id/arrowForwordIcon3"
@@ -344,7 +346,8 @@
                 android:layout_marginTop="25dp"
                 android:background="?selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:id="@+id/myCardSection">
 
                 <ImageView
                     android:id="@+id/arrowForwordIcon4"
@@ -389,7 +392,8 @@
                 android:layout_marginTop="25dp"
                 android:background="?selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:id="@+id/voucherSection">
 
                 <ImageView
                     android:id="@+id/arrowForwordIcon5"
@@ -434,7 +438,8 @@
                 android:layout_marginTop="25dp"
                 android:background="?selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:id="@+id/logoutSection">
 
                 <ImageView
                     android:id="@+id/arrowForwordIcon6"
