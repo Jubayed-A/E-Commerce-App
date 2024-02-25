@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.checkout.stepper.CheckoutActivity">
 
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
@@ -75,7 +74,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/stepperPayment"
         app:layout_constraintStart_toEndOf="@+id/stepperIndicator"
         app:layout_constraintTop_toTopOf="@+id/stepperPayment" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
