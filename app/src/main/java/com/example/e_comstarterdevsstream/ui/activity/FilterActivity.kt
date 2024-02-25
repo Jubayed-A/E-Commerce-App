@@ -18,8 +18,6 @@ class FilterActivity : AppCompatActivity() {
             startActivity(Intent(this, ProductDetailsActivity::class.java))
         }
 
-
     }
-
 
 }
