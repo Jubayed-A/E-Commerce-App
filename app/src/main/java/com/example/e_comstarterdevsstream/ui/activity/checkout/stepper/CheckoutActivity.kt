@@ -23,15 +23,12 @@ class CheckoutActivity : AppCompatActivity() {
             // Add more fragments as needed
         )
 
-
         // Set up ViewPager adapter
-        val adapter = ViewPagerAdapter(supportFragmentManager,fragments)
+        val adapter = ViewPagerAdapter(supportFragmentManager, fragments)
         binding.viewPager.adapter = adapter
-
 
         // Connect StepperIndicator with ViewPager
         binding.stepperIndicator.setViewPager(binding.viewPager)
-
 
     }
 }
