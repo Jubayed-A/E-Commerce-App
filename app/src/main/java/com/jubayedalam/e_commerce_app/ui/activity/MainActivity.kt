@@ -145,7 +145,6 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-
 // this code with coroutines
 
 /*import android.os.Bundle
