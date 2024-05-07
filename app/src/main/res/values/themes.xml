@@ -10,4 +10,5 @@
     </style>
 
     <style name="Theme.DevsStore" parent="Base.Theme.DevsStore" />
+
 </resources>

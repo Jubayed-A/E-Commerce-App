@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_login_background"
-    tools:context=".ui.fragment.shopping.SofaSetFragment">
+    tools:context=".ui.fragment.shopping.product.ProductsFragment">
 
     <!--toolbar section -->
     <androidx.appcompat.widget.Toolbar
@@ -25,7 +25,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/btnBackArrow"
                 android:layout_width="16dp"
                 android:layout_height="20dp"
                 android:background="@drawable/ic_arrow_back"
@@ -38,12 +38,12 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold_700"
                 android:gravity="center"
-                android:text="Sofa Set"
+                android:text="Products"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageFilter"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/btnBackArrow"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
@@ -61,31 +61,129 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <!--tab layout-->
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
+    <!-- categoryProduct progressbar code here -->
+    <ProgressBar
+        android:id="@+id/productCategoryProgressbar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:indeterminateTint="@color/textBlackSubTitle"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sofaFragmentToolbar" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout_tabLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="20dp"
+        app:shimmer_duration="2000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sofaFragmentToolbar"
-        app:tabIndicator="@null"
-        app:tabMode="scrollable"
-        app:tabRippleColor="@color/white"
-        app:tabSelectedTextColor="@color/black"
-        app:tabTextAppearance="@style/tabLayout_text" />
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/tablayout_each_item_shimmer" />
+            <include layout="@layout/tablayout_each_item_shimmer" />
+            <include layout="@layout/tablayout_each_item_shimmer" />
+            <include layout="@layout/tablayout_each_item_shimmer" />
+
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <!--rv tab layout-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sofaFragmentToolbar"
+        tools:listitem="@layout/tablayout_each_item" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout_productItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:shimmer_duration="2000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvTabLayout"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/product_each_item_shimmer" />
+                <include layout="@layout/product_each_item_shimmer" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/product_each_item_shimmer" />
+                <include layout="@layout/product_each_item_shimmer" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/product_each_item_shimmer" />
+                <include layout="@layout/product_each_item_shimmer" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSofaProduct"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        tools:itemCount="6"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        tools:listitem="@layout/product_each_item"
+        app:layout_constraintTop_toBottomOf="@+id/rvTabLayout"
         app:spanCount="2"
-        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"/>
+        tools:itemCount="6"
+        tools:listitem="@layout/product_each_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.DevsStore" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
+   <!-- <style name="Base.Theme.DevsStore" parent="Theme.Material3.DayNight.NoActionBar">
+        &lt;!&ndash; Customize your dark theme here. &ndash;&gt;
          <item name="colorPrimary">#151515</item>
+    </style>-->
+
+    <style name="Base.Theme.DevsStore" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryDark">@color/register_login_background</item>
+        <item name="colorAccent">#00BCD4</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="31">true</item>
     </style>
+
+    <style name="Theme.DevsStore" parent="Base.Theme.DevsStore" />
+
+
+
 </resources>

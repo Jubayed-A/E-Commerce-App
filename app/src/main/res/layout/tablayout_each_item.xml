@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="33dp"
+    android:id="@+id/productItemRoot"
+    android:layout_marginStart="7dp"
+    android:layout_marginTop="7dp"
+    android:background="@drawable/filter_bg"
+    android:backgroundTint="@color/white">
+
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold_700"
+        android:paddingStart="14dp"
+        android:paddingTop="9dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="8dp"
+        android:text=" Sofa "
+        android:textColor="@color/black"
+        android:textSize="11sp" />
+
+
+</LinearLayout>

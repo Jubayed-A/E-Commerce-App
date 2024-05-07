@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/register_login_background"
+    android:orientation="vertical"
     tools:context=".ui.fragment.shopping.home.HomeFragment">
 
     <!--toolbar section -->
@@ -35,12 +35,12 @@
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageFilter"
+                app:layout_constraintEnd_toStartOf="@+id/imageCart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageFilter"
+                android:id="@+id/imageCart"
                 android:layout_width="17dp"
                 android:layout_height="17dp"
                 android:layout_marginEnd="15dp"
@@ -64,38 +64,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--    categoryHome progressbar code here -->
             <ProgressBar
-                android:id="@+id/mainCategoryProgressbar"
+                android:id="@+id/categoryHomeProgressbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
                 android:indeterminateTint="@color/textBlackSubTitle"
                 android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/tvCategoriesText" />
 
-            <!--    for image slider  product code here -->
             <com.denzcoskun.imageslider.ImageSlider
                 android:id="@+id/image_slider"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
-                app:iss_auto_cycle="true"
-                app:iss_delay="3000"
-                app:iss_period="2000"
-                app:iss_placeholder="@drawable/default_loading"
-                app:iss_unselected_dot="@drawable/default_unselected_dot"
-                app:iss_selected_dot="@drawable/default_selected_dot"
-                app:iss_error_image="@drawable/default_error"
-                app:iss_corner_radius="20"
-                app:iss_text_align="CENTER"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                app:iss_auto_cycle="true"
+                app:iss_corner_radius="20"
+                app:iss_delay="3000"
+                app:iss_error_image="@drawable/default_error"
+                app:iss_period="2000"
+                app:iss_placeholder="@drawable/default_loading"
+                app:iss_selected_dot="@drawable/default_selected_dot"
+                app:iss_text_align="CENTER"
+                app:iss_unselected_dot="@drawable/default_unselected_dot"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!--    rv categories section here here -->
+            <!-- rv categories section here here -->
             <TextView
                 android:id="@+id/tvCategoriesText"
                 android:layout_width="wrap_content"
@@ -105,73 +105,131 @@
                 android:text="Categories"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/rvBestDealProduct"
+                app:layout_constraintStart_toStartOf="@+id/image_slider"
                 app:layout_constraintTop_toBottomOf="@id/image_slider" />
 
             <TextView
                 android:id="@+id/tvCategoriesViewAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_bold_700"
                 android:text="VIEW ALL"
                 android:textColor="@color/black"
                 android:textSize="11sp"
-                app:layout_constraintEnd_toEndOf="@+id/rvBestDealProduct"
-                app:layout_constraintTop_toBottomOf="@+id/image_slider" />
+                app:layout_constraintBottom_toBottomOf="@+id/tvCategoriesText"
+                app:layout_constraintEnd_toEndOf="@+id/image_slider"
+                app:layout_constraintTop_toTopOf="@+id/tvCategoriesText" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_layout_categoryHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/rvCategory"
+                app:layout_constraintEnd_toEndOf="@+id/rvCategory"
+                app:layout_constraintStart_toStartOf="@+id/rvCategory"
+                app:layout_constraintTop_toTopOf="@id/rvCategory"
+                app:shimmer_duration="2000"
+                tools:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/category_home_each_item_shimmer" />
+                    <include layout="@layout/category_home_each_item_shimmer" />
+                    <include layout="@layout/category_home_each_item_shimmer" />
+                    <include layout="@layout/category_home_each_item_shimmer" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvBestDealProduct"
+                android:id="@+id/rvCategory"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
-                tools:listitem="@layout/category_home_each_item"
+                android:visibility="invisible"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="@+id/image_slider"
                 app:layout_constraintStart_toStartOf="@+id/image_slider"
-                app:layout_constraintTop_toBottomOf="@id/tvCategoriesText" />
+                app:layout_constraintTop_toBottomOf="@id/tvCategoriesText"
+                tools:listitem="@layout/category_home_each_item"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/tvBestProductText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_semi_bold_600"
                 android:text="Trendings"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/rvBestDealProduct"
-                app:layout_constraintTop_toBottomOf="@id/rvBestDealProduct" />
+                app:layout_constraintStart_toStartOf="@+id/image_slider"
+                app:layout_constraintTop_toBottomOf="@id/rvCategory" />
 
-            <!--    rv best product code here -->
+            <!-- rv best product code here -->
             <TextView
                 android:id="@+id/tvTrendingViewAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
                 android:fontFamily="@font/poppins_bold_700"
                 android:text="VIEW ALL"
                 android:textColor="@color/black"
                 android:textSize="11sp"
-                app:layout_constraintEnd_toEndOf="@+id/rvBestProduct"
-                app:layout_constraintTop_toBottomOf="@+id/rvBestDealProduct" />
+                app:layout_constraintBottom_toBottomOf="@+id/tvBestProductText"
+                app:layout_constraintEnd_toEndOf="@+id/tvCategoriesViewAll"
+                app:layout_constraintTop_toTopOf="@+id/tvBestProductText" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvBestProduct"
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_layout_trendingHome"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
-                android:overScrollMode="never"
-                tools:listitem="@layout/tending_each_item"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/rvBestDealProduct"
-                app:layout_constraintTop_toBottomOf="@id/tvBestProductText" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/rvCategory"
+                app:layout_constraintTop_toBottomOf="@id/tvBestProductText"
+                app:shimmer_duration="2000"
+                tools:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/trending_shimmer_each_item" />
+                    <include layout="@layout/trending_shimmer_each_item" />
+                    <include layout="@layout/trending_shimmer_each_item" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
             <!-- this progress bar is for paging -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTrendingProduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="15dp"
+                android:overScrollMode="never"
+                android:visibility="invisible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/rvCategory"
+                app:layout_constraintTop_toBottomOf="@id/tvBestProductText"
+                tools:itemCount="3"
+                tools:listitem="@layout/trending_each_item"
+                tools:visibility="visible" />
+
             <ProgressBar
-                android:id="@+id/bestProductProgressbar"
+                android:id="@+id/trendingProductProgressbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -179,7 +237,8 @@
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

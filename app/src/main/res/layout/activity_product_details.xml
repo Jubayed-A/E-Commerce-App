@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/register_login_background"
     android:fillViewport="true"
-    tools:context=".ui.activity.ProductDetailsActivity">
+    tools:context=".ui.activity.productDetials.ProductDetailsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,8 +16,6 @@
             android:id="@+id/cardProductImages"
             android:layout_width="match_parent"
             android:layout_height="350dp"
-
-
             app:cardCornerRadius="0dp"
             app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.viewpager2.widget.ViewPager2
+                <ImageView
                     android:id="@+id/viewPagerProductImages"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -50,7 +48,7 @@
                     app:tint="@color/white" />
 
                 <ImageView
-                    android:id="@+id/imageHeart"
+                    android:id="@+id/favIcon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_margin="15dp"
@@ -336,7 +334,7 @@
             android:layout_marginBottom="25dp"
             android:background="@drawable/btn_bg_shape"
             android:gravity="center"
-            android:text="Register"
+            android:text="Add to Cart"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold"

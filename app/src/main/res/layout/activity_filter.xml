@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_login_background"
-    tools:context=".ui.activity.FilterActivity">
+    tools:context=".ui.activity.Filter.FilterActivity">
 
     <!--toolbar section -->
     <androidx.appcompat.widget.Toolbar
@@ -40,8 +40,9 @@
 
             <ImageView
                 android:id="@+id/imageFilter"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:padding="4dp"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/ic_close"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -124,10 +125,10 @@
                     android:id="@+id/rvMaterials"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/filter_each_item"
-                    tools:itemCount="5"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="3"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+                    tools:itemCount="5"
+                    tools:listitem="@layout/filter_each_item" />
 
             </LinearLayout>
 
@@ -156,10 +157,10 @@
                     android:id="@+id/rvCategories"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/filter_each_item"
-                    tools:itemCount="6"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
                     app:spanCount="3"
-                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"/>
+                    tools:itemCount="6"
+                    tools:listitem="@layout/filter_each_item" />
 
             </LinearLayout>
 
@@ -192,7 +193,6 @@
             </LinearLayout>
 
             <!-- price range seekbar section -->
-
             <LinearLayout
                 android:id="@+id/seekbarSection"
                 android:layout_width="match_parent"
@@ -221,18 +221,48 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:r2CurrentMaxValue="200"
-                    app:r2CurrentMinValue="10"
+                    app:r2CurrentMinValue="20"
                     app:r2barHeight="15dp"
                     app:r2baseColor="#E0E0E0"
                     app:r2circleFillColor="@color/black"
-                    app:r2circleRadius="10dp"
-                    app:r2circleTextColor="@color/white"
-                    app:r2circleTextSize="@dimen/value_bar_circleTextSize"
+                    app:r2circleRadius="0dp"
                     app:r2fillColor="@color/black"
                     app:r2maxValue="300"
                     app:r2maxValueStep="10"
-                    app:r2minValue="15"
+                    app:r2minValue="5"
                     app:r2minValueStep="5" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvMinPriceRange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/poppins_semi_bold_600"
+                        android:text="$10"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvMaxPriceRange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="200dp"
+                        android:fontFamily="@font/poppins_semi_bold_600"
+                        android:text="$200"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvMinPriceRange" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </LinearLayout>
 
@@ -257,8 +287,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </androidx.core.widget.NestedScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

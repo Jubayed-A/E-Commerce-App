@@ -30,10 +30,11 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="16dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/ic_arrow_back"
+                    android:id="@+id/backArrow"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_arrow_back"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -43,12 +44,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold_700"
                     android:gravity="center"
-                    android:text="Checkout"
+                    android:text="Add NewAddress"
                     android:textColor="@color/black"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/backArrow"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -56,7 +57,6 @@
 
 
         </androidx.appcompat.widget.Toolbar>
-
 
         <TextView
             android:id="@+id/tvDeliverToText"
@@ -92,7 +92,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edFullName"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
@@ -102,8 +102,10 @@
                         android:textSize="13sp" />
 
                     <EditText
+                        android:id="@+id/edFullName"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"/>
 
                 </LinearLayout>
 
@@ -111,7 +113,6 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/edPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -122,8 +123,10 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/edPhone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="phone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -139,7 +142,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edCity"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
@@ -149,8 +152,10 @@
                         android:textSize="13sp" />
 
                     <EditText
+                        android:id="@+id/edCity"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:inputType="text"/>
 
                 </LinearLayout>
 
@@ -162,7 +167,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edZip"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
@@ -172,8 +177,10 @@
                         android:textSize="13sp" />
 
                     <EditText
+                        android:id="@+id/edZip"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:inputType="textShortMessage"/>
 
                 </LinearLayout>
 
@@ -187,7 +194,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/edAddress"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semi_bold_600"
@@ -197,8 +204,10 @@
                     android:textSize="13sp" />
 
                 <EditText
+                    android:id="@+id/edAddress"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress"/>
 
             </LinearLayout>
 

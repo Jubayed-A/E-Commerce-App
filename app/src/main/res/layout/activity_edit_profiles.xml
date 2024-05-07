@@ -31,10 +31,11 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="16dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/ic_arrow_back"
+                    android:id="@+id/backArrow"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_arrow_back"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +50,7 @@
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/backArrow"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -72,26 +73,42 @@
             app:layout_constraintStart_toStartOf="@+id/profilesFragmentToolbar"
             app:layout_constraintTop_toBottomOf="@+id/profilesFragmentToolbar" />
 
-        <ImageView
-            android:id="@+id/imageShape"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/oval_shape"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/imageUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/profile_image"
             app:layout_constraintEnd_toEndOf="@+id/profile_image"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/profile_image"
             app:layout_constraintTop_toTopOf="@+id/profile_image"
-            app:layout_constraintVertical_bias="0.90999997" />
+            app:layout_constraintVertical_bias="0.90999997">
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="16dp"
-            android:src="@drawable/gallery_icon"
-            app:layout_constraintBottom_toBottomOf="@id/imageShape"
-            app:layout_constraintEnd_toEndOf="@id/imageShape"
-            app:layout_constraintStart_toStartOf="@id/imageShape"
-            app:layout_constraintTop_toTopOf="@id/imageShape" />
+
+            <ImageView
+                android:id="@+id/imageShape"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/oval_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.90999997" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="16dp"
+                android:src="@drawable/gallery_icon"
+                app:layout_constraintBottom_toBottomOf="@id/imageShape"
+                app:layout_constraintEnd_toEndOf="@id/imageShape"
+                app:layout_constraintStart_toStartOf="@id/imageShape"
+                app:layout_constraintTop_toTopOf="@id/imageShape" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/userInfoText"
@@ -129,7 +146,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edFirstName"
+                        android:id="@+id/edFirstNameText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
@@ -139,8 +156,10 @@
                         android:textSize="13sp" />
 
                     <EditText
+                        android:id="@+id/edFirstName"
                         android:layout_width="match_parent"
-                        android:layout_height="35dp" />
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"/>
 
                 </LinearLayout>
 
@@ -152,7 +171,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edLastName"
+                        android:id="@+id/edLastNameText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
@@ -162,8 +181,10 @@
                         android:textSize="13sp" />
 
                     <EditText
+                        android:id="@+id/edLastName"
                         android:layout_width="match_parent"
-                        android:layout_height="35dp" />
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"/>
 
                 </LinearLayout>
 
@@ -171,7 +192,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/edEmail"
+                android:id="@+id/edEmailText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -182,8 +203,10 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/edEmail"
                 android:layout_width="match_parent"
-                android:layout_height="35dp" />
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -199,7 +222,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edGender"
+                        android:id="@+id/edGenderText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
@@ -209,8 +232,10 @@
                         android:textSize="13sp" />
 
                     <EditText
+                        android:id="@+id/edGender"
                         android:layout_width="match_parent"
-                        android:layout_height="35dp" />
+                        android:layout_height="wrap_content"
+                        android:inputType="text"/>
 
                 </LinearLayout>
 
@@ -222,7 +247,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edPhone"
+                        android:id="@+id/edPhoneText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semi_bold_600"
@@ -232,8 +257,10 @@
                         android:textSize="13sp" />
 
                     <EditText
+                        android:id="@+id/edPhone"
                         android:layout_width="match_parent"
-                        android:layout_height="35dp" />
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"/>
 
                 </LinearLayout>
 

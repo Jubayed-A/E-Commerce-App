@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_login_background"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
-    tools:context=".ui.fragment.logInAndRegister.LogInFragment">
+    tools:context=".ui.activity.logInAndRegister.LogInActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -16,20 +16,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_marginEnd="20dp"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/poppins_bold_700"
-                android:gravity="end|center_vertical"
-                android:text="SKIP"
-                android:textColor="@color/black"
-                android:textSize="13sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/createAnAccount"
@@ -49,10 +35,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular_400"
                 android:text="To Continue, first Verify that it’s You."
                 android:textColor="@color/black"
                 android:textSize="17sp"
-                android:fontFamily="@font/poppins_regular_400"
                 app:layout_constraintStart_toStartOf="@+id/createAnAccount"
                 app:layout_constraintTop_toBottomOf="@+id/createAnAccount" />
 
@@ -62,30 +48,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins_semi_bold_600"
                 android:text="Email Address*"
                 android:textColor="@color/textBlackSubTitle"
-                android:fontFamily="@font/poppins_semi_bold_600"
                 android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="@+id/etEmail"
+                app:layout_constraintStart_toStartOf="@+id/etEmailContainer"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <EditText
-                android:id="@+id/etEmail"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etEmailContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="7dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="25dp"
-                android:background="@drawable/input_shape"
-                android:elevation="6dp"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:paddingStart="18dp"
-                android:shadowDy="4"
-                android:textColorHint="@color/textBlackSubTitle"
+                android:layout_marginTop="7dp"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@android:color/holo_red_dark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/createAnAccount"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/input_shape"
+                    android:textSize="16sp"
+                    android:inputType="textEmailAddress"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!--password section-->
             <TextView
@@ -97,25 +88,31 @@
                 android:text="Password*"
                 android:textColor="@color/textBlackSubTitle"
                 android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="@+id/etPassword"
-                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+                app:layout_constraintStart_toStartOf="@+id/etPasswordContainer"
+                app:layout_constraintTop_toBottomOf="@+id/etEmailContainer" />
 
-            <EditText
-                android:id="@+id/etPassword"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etPasswordContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
-                android:background="@drawable/input_shape"
-                android:elevation="6dp"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:paddingStart="18dp"
-                android:shadowDy="4"
-                android:textColorHint="@color/textBlackSubTitle"
-                app:layout_constraintEnd_toEndOf="@+id/etEmail"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/etEmail"
-                app:layout_constraintTop_toBottomOf="@+id/textPassword" />
+                app:endIconMode="password_toggle"
+                app:helperTextTextColor="@android:color/holo_red_dark"
+                app:layout_constraintEnd_toEndOf="@+id/etEmailContainer"
+                app:layout_constraintStart_toStartOf="@+id/etEmailContainer"
+                app:layout_constraintTop_toBottomOf="@+id/textPassword">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/input_shape"
+                    android:textSize="16sp"
+                    android:inputType="textPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!--forgot password section-->
             <TextView
@@ -128,8 +125,8 @@
                 android:text="Forgot Password?"
                 android:textColor="@color/black"
                 android:textSize="13sp"
-                app:layout_constraintEnd_toEndOf="@+id/etPassword"
-                app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+                app:layout_constraintEnd_toEndOf="@+id/etPasswordContainer"
+                app:layout_constraintTop_toBottomOf="@+id/etPasswordContainer" />
 
             <!--login button-->
             <TextView
@@ -142,8 +139,8 @@
                 android:text="Login"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintEnd_toEndOf="@+id/etPassword"
-                app:layout_constraintStart_toStartOf="@+id/etPassword"
+                app:layout_constraintEnd_toEndOf="@+id/etPasswordContainer"
+                app:layout_constraintStart_toStartOf="@+id/etPasswordContainer"
                 app:layout_constraintTop_toBottomOf="@+id/textForgotPassword" />
 
             <!--don't have an account -->
@@ -151,8 +148,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_horizontal"
+                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
@@ -164,8 +161,7 @@
                     android:fontFamily="@font/poppins_semi_bold_600"
                     android:text="Don’t have an Account? "
                     android:textColor="@color/textBlackSubTitle"
-                    android:textSize="13sp"
-                    />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/textDontHaveAccount"
@@ -175,14 +171,22 @@
                     android:fontFamily="@font/poppins_semi_bold_600"
                     android:text=" REGISTER"
                     android:textColor="@color/black"
-                    android:textSize="13sp"
-                    />
+                    android:textSize="13sp" />
 
 
 
             </LinearLayout>
 
-
+            <ProgressBar
+                android:id="@+id/logInProgressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etPasswordContainer"
+                android:layout_marginTop="20dp"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -15,6 +15,10 @@
     <color name="textBlackTitle">#000000</color>
     <color name="textBlackSubTitle">#353636</color>
     <color name="g_line">#C6C5C5</color>
+    <color name="your_toggle_tint_color">#C6C5C5</color>
+    <color name="lin_img">#F3F6F9</color>
+    <color name="shimmerColor">#C2C2C2</color>
+    <color name="payment_method_default_color">#C2C2C2</color>
 
 
 

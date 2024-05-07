@@ -2,9 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="75dp"
+    android:id="@+id/categoryItemRoot"
+    android:layout_width="78dp"
     android:layout_height="100dp"
-    android:background="@drawable/categorie_home_shape">
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/categorie_home_shape"
+    android:backgroundTint="@color/btnWhite">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -12,6 +15,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="11dp"
         android:background="@drawable/circle_shape"
+        android:backgroundTint="@color/lin_img"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,10 +24,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="22dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/categoryImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_chair"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,16 +38,21 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/categoryName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="18dp"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="13dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="20dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
         android:fontFamily="@font/poppins_semi_bold_600"
-        android:text="Chair"
-        android:textSize="13sp"
+        android:text="For Bed Room"
         android:textColor="@color/textBlackSubTitle"
+        android:textSize="11sp"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"

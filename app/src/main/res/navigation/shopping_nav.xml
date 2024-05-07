@@ -6,26 +6,94 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.shopping.home.HomeFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.fragment.shopping.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment2"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_checkoutActivity"
+            app:destination="@id/checkoutActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_accountOptionFragment2"
+            app:destination="@id/accountOptionFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_sofaSetFragment"
+            app:destination="@id/sofaSetFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.shopping.search.SearchFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.fragment.shopping.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/sofaSetFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.shopping.SofaSetFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.fragment.shopping.product.ProductsFragment"
         android:label="fragment_sofa_set"
         tools:layout="@layout/fragment_sofa_set" />
     <fragment
         android:id="@+id/profilesFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.profile.ProfilesFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.fragment.profile.ProfilesFragment"
         android:label="fragment_profiles"
-        tools:layout="@layout/fragment_profiles" />
+        tools:layout="@layout/fragment_profiles" >
+        <action
+            android:id="@+id/action_profilesFragment_to_accountOptionFragment2"
+            app:destination="@id/accountOptionFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutInfoFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.checkout.fragments.CheckoutInfoFragment"
+        android:label="fragment_checkout_info"
+        tools:layout="@layout/fragment_checkout_info" >
+        <action
+            android:id="@+id/action_checkoutInfoFragment_to_checkoutPaymentFragment"
+            app:destination="@id/checkoutPaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutPaymentFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.checkout.fragments.CheckoutPaymentFragment"
+        android:label="fragment_checkout_payments"
+        tools:layout="@layout/fragment_checkout_payments" >
+        <action
+            android:id="@+id/action_checkoutPaymentFragment_to_checkoutConfirmationFragment"
+            app:destination="@id/checkoutConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutConfirmationFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.checkout.fragments.CheckoutConfirmationFragment"
+        android:label="fragment_checkout_confirmation"
+        tools:layout="@layout/fragment_checkout_confirmation" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.fragment.shopping.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_checkoutActivity"
+            app:destination="@id/checkoutActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutActivity"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.checkout.stepper.CheckoutActivity"
+        android:label="activity_checkout"
+        tools:layout="@layout/activity_checkout" >
+        <action
+            android:id="@+id/action_checkoutActivity_to_checkoutInfoFragment"
+            app:destination="@id/checkoutInfoFragment" />
+        <action
+            android:id="@+id/action_checkoutActivity_to_checkoutPaymentFragment"
+            app:destination="@id/checkoutPaymentFragment" />
+        <action
+            android:id="@+id/action_checkoutActivity_to_checkoutConfirmationFragment"
+            app:destination="@id/checkoutConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountOptionFragment2"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.logInAndRegister.AccountOptionActivity"
+        android:label="fragment_account_option"
+        tools:layout="@layout/activity_account_option" />
 </navigation>

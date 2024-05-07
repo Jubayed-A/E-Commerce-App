@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">E-Com Stater DevsStream</string>
+    <string name="app_name">DevsStore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -8,6 +8,8 @@
     <string name="homeFurniture">Design is an evolutionary process, and filler text is just&#10; one tool in your progress-pushing arsenal.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="product_description_text">Design is an evolutionary process, and filler text is just one tool in your progress-pushing arsenal. Relax and do whatever fits with your design process. Don’t set a lot of restrictive hard-and-fast rules distract designers and design.</string>
+
+    <string name="required">Required</string>
 
 
 </resources>

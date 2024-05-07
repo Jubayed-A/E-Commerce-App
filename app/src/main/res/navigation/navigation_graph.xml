@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/accountOptionFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.logInAndRegister.AccountOptionFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.logInAndRegister.AccountOptionActivity"
         android:label="fragment_account_option"
-        tools:layout="@layout/fragment_account_option" >
+        tools:layout="@layout/activity_account_option" >
         <action
             android:id="@+id/action_accountOptionFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -19,9 +19,9 @@
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.logInAndRegister.LogInFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.logInAndRegister.LogInActivity"
         android:label="fragment_log_in"
-        tools:layout="@layout/fragment_log_in" >
+        tools:layout="@layout/activity_log_in" >
         <action
             android:id="@+id/action_logInFragment_to_registerFragment"
             app:destination="@id/registerFragment"
@@ -33,9 +33,9 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.logInAndRegister.RegisterFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.logInAndRegister.RegisterActivity"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
+        tools:layout="@layout/activity_register" >
         <action
             android:id="@+id/action_registerFragment_to_logInFragment"
             app:destination="@id/logInFragment"
@@ -44,12 +44,19 @@
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.logInAndRegister.ResetPasswordFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.logInAndRegister.ResetPasswordActivity"
         android:label="fragment_reset_password"
-        tools:layout="@layout/fragment_reset_password" />
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_newPasswordSetFragment"
+            app:destination="@id/newPasswordSetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.splashAndWelcome.SplashScreenFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.fragment.splashAndWelcome.accountOption.SplashScreenFragment"
         android:label="fragment_spalsh_screen"
         tools:layout="@layout/fragment_spalsh_screen" >
         <action
@@ -65,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.devsstore.devsstore.ui.fragment.splashAndWelcome.ViewPagerFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.fragment.splashAndWelcome.ViewPagerFragment"
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager" >
         <action
@@ -74,4 +81,9 @@
             app:popUpTo="@id/viewPagerFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/newPasswordSetFragment"
+        android:name="com.jubayedalam.e_commerce_app.ui.activity.logInAndRegister.NewPasswordSetActivity"
+        android:label="NewPasswordSetFragment"
+        tools:layout="@layout/fragment_new_password_set"/>
 </navigation>

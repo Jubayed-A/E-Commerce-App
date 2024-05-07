@@ -51,6 +51,7 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/poppins_regular_400"
                 android:text="2140 Items"
+                android:visibility="gone"
                 android:textColor="@color/textBlackSubTitle"
                 android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="@+id/categoriesItemImg"

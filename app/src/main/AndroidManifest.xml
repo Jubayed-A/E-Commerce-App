@@ -2,7 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--  for hardware permission  -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <!--  for internet permission  -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- for android 12 or lower android version -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- for this read and write for android 13 or higher -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+
     <application
+        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,6 +34,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DevsStore"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ui.fragment.splashAndWelcome.ViewPagerFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.logInAndRegister.AccountOptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.logInAndRegister.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.logInAndRegister.LogInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.logInAndRegister.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.logInAndRegister.NewPasswordSetActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.activity.voucher.VoucherAddActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.activity.checkout.stepper.CheckoutActivity"
             android:exported="true">
@@ -24,46 +69,51 @@
             android:name=".ui.activity.checkout.activity.CheckoutThankYouActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.checkout.fragments.CheckoutInfoFragment"
+            android:name=".ui.activity.checkout.activity.CheckoutPaymentAddActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.VouchersActivity"
+            android:name=".ui.activity.checkout.activity.CheckoutNewAddressActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.MySavedCardsActivity"
+            android:name=".ui.activity.voucher.VouchersActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.ShippingAddressActivity"
+            android:name=".ui.activity.saveCards.MySavedCardsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.MyFavouritesProductsActivity"
+            android:name=".ui.activity.address.ShippingAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.favourit.MyFavouritesActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.ReviewsActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".ui.activity.Category.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.fragment.splashAndWelcome.ViewPagerFragment"
-            android:exported="false" />
+            android:name=".ui.activity.Filter.FilterActivity"
+            android:exported="true" >
+
+        </activity>
         <activity
-            android:name=".ui.activity.CategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.fragment.shopping.CartFragment"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.FilterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.ProductDetailsActivity"
+            android:name=".ui.activity.productDetials.ProductDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.profile.EditProfilesActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="false" />
+            android:exported="true">
+
+        </activity>
         <activity
-            android:name=".ui.activity.SplashScreenActivity"
+            android:name=".ui.activity.splashScreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

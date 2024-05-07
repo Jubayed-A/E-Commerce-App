@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRevealLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:dragEdge="right"
+    app:mode="same_level">
+
+    <!--working method-->
+    <!--        <androidx.cardview.widget.CardView
+                android:id="@+id/firstCartSection"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/imageCartProduct"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="18dp"
+                        android:background="@drawable/product_item_shape"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvProductCartName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_semi_bold_600"
+                        android:text="Ateliar Ottaman Takumi Series"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/itemAddOrRemove"
+                        app:layout_constraintStart_toEndOf="@id/imageCartProduct"
+                        app:layout_constraintTop_toTopOf="@id/imageCartProduct" />
+
+                    <TextView
+                        android:id="@+id/tvProductCartPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular_400"
+                        android:text="$39.70"
+                        android:textColor="@color/black"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageCartProductSize"
+                        app:layout_constraintStart_toStartOf="@+id/tvProductCartName"
+                        app:layout_constraintTop_toTopOf="@+id/imageCartProductSize" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imageCartProductSize"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="20dp"
+                        android:src="#16656A"
+                        app:layout_constraintStart_toEndOf="@+id/tvProductCartPrice"
+                        app:layout_constraintTop_toBottomOf="@+id/tvProductCartName" />
+
+                    <TextView
+                        android:id="@+id/tvProductCartColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/poppins_regular_400"
+                        android:text="Green"
+                        android:textColor="@color/black"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageCartProductSize"
+                        app:layout_constraintStart_toEndOf="@+id/imageCartProductSize"
+                        app:layout_constraintTop_toTopOf="@+id/imageCartProductSize"
+                        app:layout_constraintVertical_bias="0.49" />
+
+                    <LinearLayout
+                        android:id="@+id/itemAddOrRemove"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/bg_item_add_remove"
+                        android:padding="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvProductCartColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvProductCartColor">
+
+
+                        <ImageView
+                            android:id="@+id/imageMinus"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_minus" />
+
+                        <TextView
+                            android:id="@+id/tvCartProductQuantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="1" />
+
+                        <ImageView
+                            android:id="@+id/imagePlus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_plus" />
+
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/DeletedCartSection"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/deletedIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_close_cart" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cartSectionFG"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="visible"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/imageCartProduct"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/product_item_shape"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvProductCartName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:maxLines="1"
+                    android:text="Ateliar Ottaman Takumi Series"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/itemAddOrRemove"
+                    app:layout_constraintStart_toEndOf="@id/imageCartProduct"
+                    app:layout_constraintTop_toTopOf="@id/imageCartProduct" />
+
+                <TextView
+                    android:id="@+id/tvProductCartPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular_400"
+                    android:text="$39.70"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageCartProductSize"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductCartName"
+                    app:layout_constraintTop_toTopOf="@+id/imageCartProductSize" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageCartProductSize"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="20dp"
+                    android:src="#16656A"
+                    app:layout_constraintStart_toEndOf="@+id/tvProductCartPrice"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductCartName" />
+
+                <TextView
+                    android:id="@+id/tvProductCartColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/poppins_regular_400"
+                    android:text="Green"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageCartProductSize"
+                    app:layout_constraintStart_toEndOf="@+id/imageCartProductSize"
+                    app:layout_constraintTop_toTopOf="@+id/imageCartProductSize"
+                    app:layout_constraintVertical_bias="0.49" />
+
+                <LinearLayout
+                    android:id="@+id/itemAddOrRemove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/bg_item_add_remove"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvProductCartColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvProductCartColor">
+
+
+                    <ImageView
+                        android:id="@+id/imageMinus"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_minus" />
+
+                    <TextView
+                        android:id="@+id/tvCartProductQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="1" />
+
+                    <ImageView
+                        android:id="@+id/imagePlus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_plus" />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.chauthai.swipereveallayout.SwipeRevealLayout>

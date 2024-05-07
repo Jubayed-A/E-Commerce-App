@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_login_background"
-    tools:context=".ui.activity.ShippingAddressActivity">
+    tools:context=".ui.activity.address.ShippingAddressActivity">
 
     <!--toolbar section -->
     <androidx.appcompat.widget.Toolbar
@@ -25,10 +25,11 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="16dp"
-                android:layout_height="20dp"
-                android:background="@drawable/ic_arrow_back"
+                android:id="@+id/backArrow"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_arrow_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +44,7 @@
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/backArrow"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -57,20 +58,32 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:fontFamily="@font/poppins_semi_bold_600"
-        android:id="@+id/textAddress"
+        android:id="@+id/textLastName"
         android:text="Address"
         app:layout_constraintStart_toStartOf="@id/cartFragmentToolbar"
         app:layout_constraintTop_toBottomOf="@id/cartFragmentToolbar"
         android:layout_marginTop="20dp"/>
 
+    <TextView
+        android:id="@+id/NewAddressAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular_400"
+        android:text="NEW ADDRESS"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textLastName"
+        app:layout_constraintEnd_toEndOf="@id/cartFragmentToolbar"
+        app:layout_constraintTop_toTopOf="@+id/textLastName" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMYFavourites"
+        android:id="@+id/rvAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15sp"
         app:layout_constraintEnd_toEndOf="@id/cartFragmentToolbar"
         app:layout_constraintStart_toStartOf="@id/cartFragmentToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/textAddress"
+        app:layout_constraintTop_toBottomOf="@+id/textLastName"
         tools:listitem="@layout/address_each_item" />
 
 

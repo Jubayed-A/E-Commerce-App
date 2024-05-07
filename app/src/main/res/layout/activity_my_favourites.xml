@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_login_background"
-    tools:context=".ui.activity.MyFavouritesProductsActivity">
+    tools:context=".ui.activity.favourit.MyFavouritesActivity">
 
     <!--toolbar section -->
     <androidx.appcompat.widget.Toolbar
@@ -25,10 +25,11 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="16dp"
-                android:layout_height="20dp"
-                android:background="@drawable/ic_arrow_back"
+                android:id="@+id/btnBackArrow"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_arrow_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +44,7 @@
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/btnBackArrow"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

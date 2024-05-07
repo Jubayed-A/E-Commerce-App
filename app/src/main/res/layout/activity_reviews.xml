@@ -25,10 +25,11 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="16dp"
-                android:layout_height="20dp"
-                android:background="@drawable/ic_back"
+                android:id="@+id/btnBackArrow"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +44,7 @@
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/btnBackArrow"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -61,53 +62,28 @@
         app:layout_constraintStart_toStartOf="@+id/cartFragmentToolbar"
         app:layout_constraintTop_toBottomOf="@+id/cartFragmentToolbar" />
 
-    <LinearLayout
+
+    <RatingBar
         android:id="@+id/reviewSection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+
+        android:layout_marginTop="12dp"
+        android:numStars="5"
+        android:stepSize="1"
+        android:rating="4"
+
+        android:progressBackgroundTint="@color/black"
+        android:progressTint="#FE8900"
+
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+
+
+
         app:layout_constraintEnd_toEndOf="@+id/imageLike"
         app:layout_constraintStart_toStartOf="@+id/imageLike"
-        app:layout_constraintTop_toBottomOf="@id/imageLike">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_start_white" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_start_white" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_start_white" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_start_white" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_start_white" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/imageLike" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/inputCardView"
@@ -116,71 +92,72 @@
         android:layout_marginTop="25dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="@id/cartFragmentToolbar"
         app:layout_constraintStart_toStartOf="@id/cartFragmentToolbar"
         app:layout_constraintTop_toBottomOf="@id/reviewSection">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/edName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/poppins_semi_bold_600"
-                android:gravity="center"
-                android:text="Your Name"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
-
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="42dp" />
-
-            <TextView
-                android:id="@+id/edReviews"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/poppins_semi_bold_600"
-                android:gravity="center"
-                android:text="Write your Review"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/white"
+                android:orientation="vertical">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:hint="Mininum Characters: 250" />
+                <TextView
+                    android:id="@+id/edName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="center"
+                    android:text="Your Name"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp" />
+
+                <TextView
+                    android:id="@+id/edReviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:gravity="center"
+                    android:text="Write your Review"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Mininum Characters: 250" />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-    <!--checkout button-->
-    <TextView
-        android:id="@+id/btnSubmit"
-        android:layout_width="354dp"
-        android:layout_height="54dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/btn_bg_shape"
-        android:fontFamily="@font/poppins_bold_700"
-        android:gravity="center"
-        android:text="Submit"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="@id/inputCardView"
-        app:layout_constraintStart_toStartOf="@id/inputCardView"
-        app:layout_constraintTop_toBottomOf="@+id/inputCardView" />
+        <!--checkout button-->
+        <TextView
+            android:id="@+id/btnSubmit"
+            android:layout_width="354dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/btn_bg_shape"
+            android:fontFamily="@font/poppins_bold_700"
+            android:gravity="center"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="@id/inputCardView"
+            app:layout_constraintStart_toStartOf="@id/inputCardView"
+            app:layout_constraintTop_toBottomOf="@+id/inputCardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
