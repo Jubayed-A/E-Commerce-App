@@ -1,7 +1,5 @@
 package com.jubayedalam.e_commerce_app.ui.activity
 
-// this code without coroutines
-
 import android.os.Bundle
 import android.util.Log
 import android.view.View
