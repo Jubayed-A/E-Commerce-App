@@ -54,7 +54,7 @@ class AddressAdapter(private var addresses: List<Address>) : RecyclerView.Adapte
         }
     }
 
-    fun updateData(newAddresses: List<Address>) {
+    fun updateData(newAddresses: List<Address>, getAddressId: Int?) {
         addresses = newAddresses
         notifyDataSetChanged()
     }
