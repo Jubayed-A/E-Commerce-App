@@ -277,11 +277,8 @@ class EditProfilesActivity : AppCompatActivity() {
                 }
             }
         })
-
         // Fetch addresses
         addressViewModel.getAllAddresses()
-
     }
-
 
 }
