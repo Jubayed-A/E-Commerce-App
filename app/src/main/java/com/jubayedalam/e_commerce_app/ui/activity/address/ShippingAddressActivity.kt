@@ -59,7 +59,7 @@ private lateinit var binding: ActivityShippingAddressBinding
                 }
                 is Response.Success -> {
                     response.data?.let { addresses ->
-                        addressAdapter.updateData(addresses)
+                        addressAdapter.updateData(addresses, getAddressId)
                         Toast.makeText(this, "data show success", Toast.LENGTH_SHORT).show()
                     }
                 }
