@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.jubayedalam.e_commerce_app.data.profile.editProfile.EditProfileResponse
 import com.jubayedalam.e_commerce_app.data.profile.editProfile.EditProfileUser
 import com.jubayedalam.e_commerce_app.databinding.ActivityEditProfilesBinding
@@ -27,7 +28,6 @@ import com.jubayedalam.e_commerce_app.viewModel.checkout.addressGet.AddressViewM
 import com.jubayedalam.e_commerce_app.viewModel.checkout.addressGet.AddressViewModelFactory
 import com.jubayedalam.e_commerce_app.viewModel.profile.editProfile.EditProfileViewModel
 import com.jubayedalam.e_commerce_app.viewModel.profile.editProfile.EditProfileViewModelFactory
-import com.github.dhaval2404.imagepicker.ImagePicker
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -43,6 +43,7 @@ class EditProfilesActivity : AppCompatActivity() {
 
     private var imageUri: Uri? = null
     private var selectedAddressId: Int? = null
+    private var getAddressId : Int? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -214,6 +215,35 @@ class EditProfilesActivity : AppCompatActivity() {
         }
     }
 
+    private fun getAndSetTheData() {
+        val firstName = intent.getStringExtra("first_name")
+        val lastName = intent.getStringExtra("last_name")
+        val email = intent.getStringExtra("email")
+        val mobile = intent.getStringExtra("mobile")
+        val image = intent.getStringExtra("image")
+        getAddressId = intent.getIntExtra("address",0)
+
+
+        Log.d("New AddressId", getAddressId.toString())
+
+
+        binding.edFirstName.setText(firstName)
+        binding.edLastName.setText(lastName)
+        binding.edEmail.setText(email)
+        binding.edPhone.setText(mobile)
+        binding.edGender.setText("Male")
+        binding.edEmail.isEnabled = false // Disable editing
+        // Load product image using Glide
+        Glide.with(this)
+            .load(image)
+            .placeholder(com.denzcoskun.imageslider.R.drawable.default_loading)
+            .error(com.denzcoskun.imageslider.R.drawable.default_error)
+            .into(binding.profileImage)
+
+        initAddressSetup()
+
+    }
+
     private fun initAddressSetup() {
         // Initialize ViewModel
         val repository = AddressRepository(AddressRetrofitInstance.addressApiService)
@@ -236,8 +266,9 @@ class EditProfilesActivity : AppCompatActivity() {
                 }
                 is Response.Success -> {
                     response.data?.let { addresses ->
-                        addressAdapter.updateData(addresses)
+                        addressAdapter.updateData(addresses, getAddressId)
                         Toast.makeText(this, "data show success", Toast.LENGTH_SHORT).show()
+                        Log.d("GetAddressId", getAddressId.toString())
                     }
                 }
                 is Response.Error -> {
@@ -252,30 +283,5 @@ class EditProfilesActivity : AppCompatActivity() {
 
     }
 
-
-    private fun getAndSetTheData() {
-        val firstName = intent.getStringExtra("first_name")
-        val lastName = intent.getStringExtra("last_name")
-        val email = intent.getStringExtra("email")
-        val mobile = intent.getStringExtra("mobile")
-        val image = intent.getStringExtra("image")
-
-
-        binding.edFirstName.setText(firstName)
-        binding.edLastName.setText(lastName)
-        binding.edEmail.setText(email)
-        binding.edPhone.setText(mobile)
-        binding.edGender.setText("Male")
-        binding.edEmail.isEnabled = false // Disable editing
-        // Load product image using Glide
-        Glide.with(this)
-            .load(image)
-            .placeholder(com.denzcoskun.imageslider.R.drawable.default_loading)
-            .error(com.denzcoskun.imageslider.R.drawable.default_error)
-            .into(binding.profileImage)
-
-        initAddressSetup()
-
-    }
 
 }
