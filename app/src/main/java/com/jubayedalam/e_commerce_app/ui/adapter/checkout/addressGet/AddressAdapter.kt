@@ -56,7 +56,14 @@ class AddressAdapter(private var addresses: List<Address>) : RecyclerView.Adapte
 
     fun updateData(newAddresses: List<Address>, getAddressId: Int?) {
         addresses = newAddresses
+        for (i in addresses){
+            if (i.id == getAddressId){
+                val index = addresses.indexOf(i)
+                selectedAddressPosition = index
+            }
+        }
         notifyDataSetChanged()
     }
+
 
 }
