@@ -83,19 +83,13 @@ class EditProfilesActivity : AppCompatActivity() {
         }
 
         binding.btnSave.setOnClickListener {
-
             if (sharedPreferencesManager.isLoggedIn()){
                 updatedUserProfile()
             }else{
                 Toast.makeText(this, "not login", Toast.LENGTH_SHORT).show()
             }
-
         }
-
-
     }
-
-
 
     private fun updatedUserProfile() {
         viewModel.editProfileResponseLiveData.observe(this) { response ->
@@ -189,8 +183,6 @@ class EditProfilesActivity : AppCompatActivity() {
         Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
         Log.e("EditProfileActivity", "Error: $errorMessage")
     }
-
-
 
     private fun initViewModel() {
         val repository = EditProfileRepository(EditProfileRetrofitInstance.apiService)
