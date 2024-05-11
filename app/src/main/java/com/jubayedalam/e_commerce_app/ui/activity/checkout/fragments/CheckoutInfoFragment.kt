@@ -114,7 +114,7 @@ class CheckoutInfoFragment : Fragment() {
                 }
                 is Response.Success -> {
                     response.data?.let { addresses ->
-                        addressAdapter.updateData(addresses)
+                        addressAdapter.updateData(addresses, getAddressId)
                         Toast.makeText(requireContext(), "data show success", Toast.LENGTH_SHORT).show()
                     }
                 }
