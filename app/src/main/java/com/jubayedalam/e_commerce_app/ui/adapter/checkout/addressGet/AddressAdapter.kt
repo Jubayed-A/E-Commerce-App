@@ -65,5 +65,4 @@ class AddressAdapter(private var addresses: List<Address>) : RecyclerView.Adapte
         notifyDataSetChanged()
     }
 
-
 }
